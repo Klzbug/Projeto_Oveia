@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  --la-color: #F9F6F0;
+  --camurca-color: #8B7355;
+  --pasto-color: #4A6B53;
+  --areia-color: #E6DFD3;
+  --cabrito-color: #2C2A29;
+  --milho-color: #D4A373;
+  --broto-color: #A3B19B;
+
+  --background: var(--la-color);
+  --foreground: var(--cabrito-color);
+}
+
+.dark {
+  --la-color: #121110;
+  --camurca-color: #C8BCB0;
+  --pasto-color: #60856C;
+  --areia-color: #1E1C1B;
+  --cabrito-color: #F4EFE6;
+  --milho-color: #E0B388;
+  --broto-color: #2A2827;
+
+  --background: var(--la-color);
+  --foreground: var(--cabrito-color);
+}
+
+@theme {
+  --color-la: var(--la-color);
+  --color-camurca: var(--camurca-color);
+  --color-pasto: var(--pasto-color);
+  --color-areia: var(--areia-color);
+  --color-cabrito: var(--cabrito-color);
+  --color-milho: var(--milho-color);
+  --color-broto: var(--broto-color);
+
+  --font-sans: var(--font-sans-google), sans-serif;
+  --font-serif: var(--font-serif-google), serif;
+}
+
+body {
+  background-color: var(--la-color);
+  color: var(--cabrito-color);
+  font-family: var(--font-sans);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--la-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--broto-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pasto-color);
+}
+
+/* Subtle fade in animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
